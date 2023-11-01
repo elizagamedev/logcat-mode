@@ -1227,9 +1227,9 @@ is incomplete, return nil."
 
 (defun logcat--fb-adb-get-versioned-commandline ()
   (let* ((version-list (logcat--fb-adb-determine-version))
-         (adb-major-version (nth-value 0 version-list))
-         (adb-minor-version (nth-value 1 version-list))
-         (adb-patch-version (nth-value 2 version-list))
+         (adb-major-version (nth 0 version-list))
+         (adb-minor-version (nth 1 version-list))
+         (adb-patch-version (nth 2 version-list))
          (adb-logcat-base-subarg "logcat -B '*:V'"))
     (if (string-equal adb-major-version "1")
         adb-logcat-base-subarg
